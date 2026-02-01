@@ -1,0 +1,17 @@
+fastapi
+uvicorn
+python-multipart
+PyPDF2
+python-docx
+langchain
+langchain-community
+langchain-core
+langchain-text-splitters
+langchain-google-genai
+sentence-transformers
+faiss-cpu
+python-dotenv
+tiktoken
+langchain-huggingface
+langchain-groq
+pydantic
