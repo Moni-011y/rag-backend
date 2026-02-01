@@ -88,7 +88,3 @@ async def delete_document(filename: str):
     if success:
         return {"status": "deleted"}
     raise HTTPException(status_code=404, detail="Document not found")
-
-if __name__ == "__main__":
-    port = int(os.getenv("PORT", 8000))
-    uvicorn.run(app, host="0.0.0.0", port=port)
