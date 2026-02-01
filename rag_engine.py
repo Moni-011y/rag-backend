@@ -2,7 +2,7 @@ import os
 from typing import List, Tuple
 from langchain_community.vectorstores import FAISS
 from langchain_groq import ChatGroq
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.documents import Document
 from langchain_classic.memory import ConversationBufferMemory
@@ -11,8 +11,8 @@ from langchain_classic.chains import ConversationalRetrievalChain
 class RAGEngine:
     def __init__(self, index_dir: str):
         self.index_dir = index_dir
-        print("Initializing Local Embeddings model (sentence-transformers)...")
-        self.embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+        print("Initializing Google Gemini Embeddings API...")
+        self.embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
         self.vector_store = None
         self.indexed_files = set()
         self.last_uploaded_file = None
